@@ -1,0 +1,95 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Playing Cards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main id="playing-cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="left">A♠</div>
+      <div class="middle">
+        <span>♠</span>
+        <span>♠</span>
+      </div>
+      <div class="right">A♠</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="left">K♥</div>
+      <div class="middle">
+        <span>♥</span>
+        <span>♥</span>
+      </div>
+      <div class="right">K♥</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="left">Q♦</div>
+      <div class="middle">
+        <span>♦</span>
+        <span>♦</span>
+      </div>
+      <div class="right">Q♦</div>
+    </div>
+  </main>
+
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of styles.css **
+
+/* Container for all cards */
+#playing-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Individual card */
+.card {
+  width: 180px;
+  height: 260px;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  font-size: 22px;
+}
+
+/* Left corner */
+.left {
+  align-self: flex-start;
+}
+
+/* Middle symbols */
+.middle {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Right corner */
+.right {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+
+** end of styles.css **
+

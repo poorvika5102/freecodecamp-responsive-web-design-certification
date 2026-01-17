@@ -1,0 +1,162 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>CSS Grid Guide</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Grid_Containers">Grid Containers</a>
+        <a class="nav-link" href="#Grid_Items">Grid Items</a>
+        <a class="nav-link" href="#Fractional_Units">Fractional Units</a>
+        <a class="nav-link" href="#Browser_Support">Browser Support</a>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2D system, meaning it can handle both columns and rows.</p>
+            <p>Unlike flexbox, which is largely 1D, Grid allows for much more complex designs without nesting multiple containers.</p>
+            <code>display: grid;</code>
+        </section>
+
+        <section class="main-section" id="Grid_Containers">
+            <header>Grid Containers</header>
+            <p>To get started you have to define a container element as a grid with display: grid.</p>
+            <p>Once you do this, you can set column and row sizes using various properties:</p>
+            <ul>
+                <li>grid-template-columns</li>
+                <li>grid-template-rows</li>
+                <li>grid-gap</li>
+                <li>justify-items</li>
+                <li>align-items</li>
+            </ul>
+            <code>grid-template-columns: 200px auto;</code>
+        </section>
+
+        <section class="main-section" id="Grid_Items">
+            <header>Grid Items</header>
+            <p>The direct children of a grid container automatically become grid items.</p>
+            <p>You can control their position using line numbers or named areas.</p>
+            <code>grid-column: 1 / 3;</code>
+            <p>This allows items to span across multiple columns or rows easily.</p>
+        </section>
+
+        <section class="main-section" id="Fractional_Units">
+            <header>Fractional Units</header>
+            <p>Grid introduced a new length unit called the fractional unit (fr).</p>
+            <p>One fr represents a fraction of the free space in the grid container.</p>
+            <code>grid-template-columns: 1fr 2fr 1fr;</code>
+            <p>This creates three columns where the middle one is twice as wide as the others.</p>
+        </section>
+
+        <section class="main-section" id="Browser_Support">
+            <header>Browser Support</header>
+            <p>Modern browser support for CSS Grid is excellent, covering over 95% of users globally.</p>
+            <p>For older browsers, you can use feature queries to provide fallbacks:</p>
+            <code>@supports (display: grid) { ... }</code>
+            <p>Always test your layouts in multiple environments to ensure accessibility.</p>
+        </section>
+    </main>
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+:root {
+    --nav-width: 300px;
+    --border-color: #ccd1d1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+/* Navbar Requirements (Stories 14, 21) */
+#navbar {
+    position: fixed;
+    width: var(--nav-width);
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-right: 2px solid var(--border-color);
+    background-color: #f8f9f9;
+    overflow-y: auto;
+}
+
+#navbar header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #4d5656;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link:hover {
+    background-color: #e5e8e8;
+}
+
+/* Main Doc Layout (Story 1) */
+#main-doc {
+    margin-left: var(--nav-width);
+    padding: 20px 40px;
+    margin-bottom: 100px;
+}
+
+.main-section header {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+code {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+/* Media Query (Story 15, 22) */
+@media (max-width: 768px) {
+    #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    #main-doc {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+** end of styles.css **
+

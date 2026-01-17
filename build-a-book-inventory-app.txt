@@ -1,0 +1,146 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Book Inventory</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="read">
+                <td>The Great Gatsby</td>
+                <td>F. Scott Fitzgerald</td>
+                <td>Classic</td>
+                <td><span class="status">Read</span></td>
+                <td>
+                    <span class="rate three">
+                        <span></span><span></span><span></span>
+                    </span>
+                </td>
+            </tr>
+            <tr class="to-read">
+                <td>1984</td>
+                <td>George Orwell</td>
+                <td>Dystopian</td>
+                <td><span class="status">To Read</span></td>
+                <td>
+                    <span class="rate">
+                        <span></span><span></span><span></span>
+                    </span>
+                </td>
+            </tr>
+            <tr class="in-progress">
+                <td>Dune</td>
+                <td>Frank Herbert</td>
+                <td>Sci-Fi</td>
+                <td><span class="status">In Progress</span></td>
+                <td>
+                    <span class="rate">
+                        <span></span><span></span><span></span>
+                    </span>
+                </td>
+            </tr>
+            <tr class="read">
+                <td>The Hobbit</td>
+                <td>J.R.R. Tolkien</td>
+                <td>Fantasy</td>
+                <td><span class="status">Read</span></td>
+                <td>
+                    <span class="rate one">
+                        <span></span><span></span><span></span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+/* Story 9 & 25 */
+span {
+    display: inline-block;
+}
+
+/* Stories 19-24: Target rows using attribute selectors */
+tr[class="read"] {
+    background-image: linear-gradient(#d4edda, #ffffff);
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(#fff3cd, #ffffff);
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(#cce5ff, #ffffff);
+}
+
+/* Stories 26-28: To Read Status */
+tr[class="to-read"] span[class="status"] {
+    border: 1px solid #856404;
+    background-image: linear-gradient(#ffeeba, #fff3cd);
+}
+
+/* Stories 29-31: Read Status */
+tr[class="read"] span[class="status"] {
+    border: 1px solid #155724;
+    background-image: linear-gradient(#c3e6cb, #d4edda);
+}
+
+/* Stories 32-34: In Progress Status */
+tr[class="in-progress"] span[class="status"] {
+    border: 1px solid #004085;
+    background-image: linear-gradient(#b8daff, #cce5ff);
+}
+
+/* Stories 35-38: Combine Status and Rate spans */
+span[class="status"], 
+span[class^="rate"] {
+    height: 25px;
+    width: 90px;
+    padding: 2px;
+}
+
+/* Stories 39-45: Empty spans inside the rate container */
+span[class^="rate"] > span {
+    border: 1px solid #555;
+    border-radius: 50%;
+    margin: 2px;
+    height: 15px;
+    width: 15px;
+    background-color: #ddd;
+}
+
+/* Stories 46-47: First star for 'one' rating */
+span[class~="one"] span:nth-child(1) {
+    background-image: linear-gradient(gold, orange);
+}
+
+/* Stories 48-49: First two stars for 'two' rating */
+span[class~="two"] span:nth-child(-n+2) {
+    background-image: linear-gradient(gold, orange);
+}
+
+/* Stories 50-51: All three stars for 'three' rating */
+span[class~="three"] span {
+    background-image: linear-gradient(gold, orange);
+}
+
+** end of styles.css **
+

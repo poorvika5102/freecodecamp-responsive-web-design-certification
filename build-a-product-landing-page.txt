@@ -1,0 +1,217 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acoustic Gear - Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <img id="header-img" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png" alt="Company Logo">
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Handcrafted Masterpieces</h2>
+            <form id="form" action="https://www.freecodecamp.org/email-submit">
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <input type="submit" id="submit" value="Get Started">
+            </form>
+        </section>
+
+        <section id="features">
+            <div class="feature-item">
+                <h3>Premium Materials</h3>
+                <p>Our instruments are made from the finest wood sourced sustainably from around the globe.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Fast Shipping</h3>
+                <p>We make sure your product is delivered safely and quickly to your doorstep.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <iframe id="video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="pricing">
+            <div class="product">
+                <div class="level">TENOR UKULELE</div>
+                <h2>$500</h2>
+                <p>Perfect for beginners and hobbyists alike.</p>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="level">BASS GUITAR</div>
+                <h2>$900</h2>
+                <p>Deep tones for the serious musician.</p>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="level">ACOUSTIC GUITAR</div>
+                <h2>$1200</h2>
+                <p>The gold standard of sound and feel.</p>
+                <button class="btn">Select</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+/* General Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    padding-top: 80px; /* Space for the fixed header */
+}
+
+/* Header & Nav (Flexbox & Fixed Position) */
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+}
+
+#header-img {
+    max-width: 100%;
+    height: 40px;
+}
+
+#nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: #ff8c00;
+}
+
+/* Form Styling */
+#hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#email {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#submit {
+    padding: 10px 30px;
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #e67e00;
+}
+
+/* Video Section */
+#how-it-works {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+/* Pricing Section (Flexbox) */
+#pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.product {
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+}
+
+.level {
+    background-color: #ddd;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media Query (Responsive Design) */
+@media (max-width: 600px) {
+    #header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    #nav-bar ul {
+        margin-top: 10px;
+    }
+
+    #pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+** end of styles.css **
+
